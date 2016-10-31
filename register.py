@@ -1,6 +1,5 @@
-import sqlconnection
-
-
+def register():
+    print('meh')
 
 
     # dataobject = { "username" : "test", "password" : "123", "storagestate" : "0", "storagedate" : "" }

@@ -1,5 +1,12 @@
+#software
+import register
+
+# sys
 import time
-import main
+import os
+
+def clearscreen():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 def menu():
 
@@ -17,26 +24,26 @@ def menu():
                 print('')
                 print('U fiets wordt geregistreerd')
                 time.sleep(2)
-                main.clearscreen()
+                clearscreen()
+                register.register()
             if input_choice == 2:
                 print('')
                 print('Bla')
                 time.sleep(2)
-                main.clearscreen()
+                clearscreen()
             if input_choice == 3:
                 print('')
                 print('Bla')
                 time.sleep(2)
-                main.clearscreen()
+                clearscreen()
         else:
             print('')
             print('Geen geldige invoer!')
             time.sleep(1)
-            main.clearscreen()
-
+            clearscreen()
 
     except:
         print('')
         print('Ongeldige waarde!')
         time.sleep(1)
-        main.clearscreen()
+        clearscreen()
