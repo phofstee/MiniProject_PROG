@@ -1,14 +1,24 @@
-import _sqlite3
 # @TODO: IMPORTS
+import _sqlite3
+import os
+
+# Functie om het scherm op te schonen.
+# @AUTHOR: Pim
+def clearscreen():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+# Functie om het menu te starten
+# @AUTHOR: Pim
+import menu
 
 # Iedere module hier importeren
 # @AUTHOR: iedereen
 
 # @TODO: DB CONNECTIE
-# @AUTHOR Thomas
+import sqlconnection
 
 # @TODO: REGISTREER
-# @AUTHOR: Pim
+import register
 
 # @TODO: STALLEN
 # @AUTHOR:
@@ -19,3 +29,5 @@ import _sqlite3
 
 # @TODO: INFO OPVRAGEN
 # @AUTHOR:
+
+menu.menu()
