@@ -1,4 +1,3 @@
-import _sqlite3
 # @TODO: IMPORTS
 
 # Iedere module hier importeren
