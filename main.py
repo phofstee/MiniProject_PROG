@@ -3,7 +3,6 @@ import os
 # Functie om het scherm op te schonen.
 # @AUTHOR: Pim
 
-
 # Functie om het menu te starten
 # @AUTHOR: Pim
 from menu import menu

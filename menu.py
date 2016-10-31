@@ -24,26 +24,26 @@ def menu():
                 print('')
                 print('U fiets wordt geregistreerd')
                 time.sleep(2)
-                clearscreen()
+                
                 register.register()
             if input_choice == 2:
                 print('')
                 print('Bla')
                 time.sleep(2)
-                clearscreen()
+                
             if input_choice == 3:
                 print('')
                 print('Bla')
                 time.sleep(2)
-                clearscreen()
+                
         else:
             print('')
             print('Geen geldige invoer!')
             time.sleep(1)
-            clearscreen()
+            
 
     except:
         print('')
         print('Ongeldige waarde!')
         time.sleep(1)
-        clearscreen()
+        
