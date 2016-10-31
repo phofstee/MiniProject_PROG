@@ -1,6 +1,5 @@
 __author__ = "Pim Hofstee"
 
-import datetime
 import sqlconnection
 import time
 import os
@@ -43,12 +42,8 @@ def register():
         except:
             print('Ongeldig wachtwoord opgegeven, probeer nogmaals.')
 
-    # create storage date
-    today = datetime.date.today()
-    storagedate = today.strftime('%d-%m-%Y, %m:%m')
-
     # Fill object and store
-    dataobject = { "username" : name, "password" : password, "storagestate" : "0", "storagedate" : storagedate }
+    dataobject = { "username" : name, "password" : password, "storagestate" : "0", "storagedate" : "" }
     sqlconnection.CreateNewRow(sqlconn, sqlcursor, dataobject)
 
     print('Het account', name, 'is succesvol aangemaakt')
