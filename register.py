@@ -10,7 +10,7 @@ def register():
 
 
     dataobject = { "username" : name, "password" : password, "storagestate" : "0", "storagedate" : storagedate }
-    sqlconnection, sqlcursor = sqlconnection.InitializeSQL()
-    sqlconnection.CreateNewRow('meh', 'beh', dataobject)
-
+    sqlconn, sqlcursor = sqlconnection.InitializeSQL()
+    sqlconnection.CreateNewRow(sqlconn, sqlcursor, dataobject)
+    print(sqlconnection.GetAllRows(sqlcursor))
 register()
