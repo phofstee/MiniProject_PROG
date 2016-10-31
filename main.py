@@ -1,28 +1,49 @@
+__author__ = "Thomas Korevaar, Menno Noltes, Gijs van Ewijk, Larsse Vink and Pim Hofstee"
+__version__ = 1.0
+__status__ = 'Development'
+
+# Sys modules
 import os
 
-# Functie om het scherm op te schonen.
-# @AUTHOR: Pim
+# Programme modules
+from register import register
 
 # Functie om het menu te starten
-# @AUTHOR: Pim
-from menu import menu
-# @TODO: IMPORTS
-
-# Iedere module hier importeren
-# @AUTHOR: iedereen
-
-# @TODO: REGISTREER
+# @note: als clean gebruikt, geeft hij bij mij een foutmelding: TERM environment variable not set.
+# @todo: Bovenstaande bug uitzoeken en fixen.
 # @author: Pim
-#import register
+# def clearscreen():
+#     os.system('cls' if os.name == 'nt' else 'clear')
 
-# @TODO: STALLEN
-# @AUTHOR:
+# Geeft menu opties weer
+# @author: Pim
+def menu():
 
-# @TODO: OPHALEN
-# @NOTE: Hier krijg je
-# @AUTHOR:
+    print('Menu: ')
+    print('1 - Registreren')
+    print('2 - Fiets stallen')
+    print('3 - Fiets ophalen')
+    print('4 - Status fiets opvragen')
+    print('')
 
-# @TODO: INFO OPVRAGEN
-# @AUTHOR:
+    try:
+        input_choice = int(input('Maak een keuze: '))
+        if input_choice > 0 and input_choice < 5:
+            if input_choice == 1:
+                register()
+            if input_choice == 2:
+                print('Fiets stallen')
+            if input_choice == 3:
+                print('Fiets ophalen')
+            if input_choice == 4:
+                print('Status fiets opvragen')
+        else:
+            print('Geen geldige invoer!')
+    except:
+        print('')
+        print('Ongeldige waarde!')
+
+    # Na dat de functie is uitgevoerd, moet het menu opnieuw worden gestart.
+    menu()
 
 menu()
