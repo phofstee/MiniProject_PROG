@@ -3,7 +3,6 @@ __version__ = 1.0
 __status__ = 'Development'
 
 from park import park
-import main
 
 def menu():
 
@@ -27,7 +26,7 @@ def menu():
                 # Menno
                 print('Status fiets opvragen')
             if input_choice == 4:
-                main.loginmenu()
+                print('Loguit')
         else:
             print('Geen geldige invoer!')
     except:

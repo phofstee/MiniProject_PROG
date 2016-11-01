@@ -4,8 +4,8 @@ __status__ = 'Development'
 
 # Programme modules
 from register import register
-#from login import login
 import login
+
 # Geeft menu opties weer
 def loginmenu():
 
@@ -15,23 +15,19 @@ def loginmenu():
     print('3 - Uitleg')
     print('')
 
-    try:
-        input_choice = int(input('Maak een keuze: '))
-        if input_choice > 0 and input_choice < 3:
-            if input_choice == 1:
-                # Pim
-                login()
-            if input_choice == 2:
-                # Pim
-                register()
-            if input_choice == 3:
-                # Menno
-                print('Uitleg')
-        else:
-            print('Geen geldige invoer!')
-    except:
-        print('')
-        print('Ongeldige waarde!')
+    input_choice = int(input('Maak een keuze: '))
+    if input_choice > 0 and input_choice < 3:
+        if input_choice == 1:
+            # Pim
+            login.login()
+        if input_choice == 2:
+            # Pim
+            register()
+        if input_choice == 3:
+            # Menno
+            print('Uitleg')
+    else:
+        print('Geen geldige invoer!')
 
 # Roep menu aan bij opstarten script
 loginmenu()
