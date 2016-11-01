@@ -49,5 +49,7 @@ def loginmenu():
     else:
         print('Geen geldige invoer!')
 
+    loginmenu()
+
 # Roep menu aan bij opstarten script
 loginmenu()
