@@ -1,6 +1,9 @@
-#pip install pyotp
-#pip install qrcode
-#pip install pillow
+#Auteur: Thomas Korevaar
+
+#Gebruikte modules:
+#   pip install pyotp
+#   pip install qrcode
+#   pip install pillow
 
 import time
 import pyotp
@@ -23,11 +26,3 @@ def CreateAuthenticatorQRCode(secret, username):
     img.save('qrcode.png')
     img = Image.open('qrcode.png')
     img.show()
-
-    while(True):
-        print(GetTOTP(secret))
-        time.sleep(1)
-
-    return secret
-
-CreateAuthenticatorQRCode(GetSecret(), "Thomas Korevaar")
