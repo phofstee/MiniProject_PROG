@@ -4,7 +4,7 @@ import sqlite3
 def InitializeSQL():
     sqlconnection = sqlite3.connect('stalling.db')
     sqlcursor = sqlconnection.cursor()
-    sqlcursor.execute("CREATE TABLE IF NOT EXISTS stalling (uuid integer primary key autoincrement, username text, password text, storagestate integer, storagedate text)")
+    sqlcursor.execute("CREATE TABLE IF NOT EXISTS stalling (uuid integer primary key autoincrement, username text, password text, secret text, storagestate integer, storagedate text)")
 
     return sqlconnection, sqlcursor
 
