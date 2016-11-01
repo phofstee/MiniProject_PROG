@@ -2,6 +2,7 @@ __author__ = "Thomas Korevaar, Menno Noltes, Gijs van Ewijk, Larsse Vink and Pim
 __version__ = 1.0
 __status__ = 'Development'
 
+import time
 from park import park
 
 def menu():
@@ -26,7 +27,8 @@ def menu():
                 # Menno
                 print('Status fiets opvragen')
             if input_choice == 4:
-                print('Loguit')
+                print('U bent uitgelogd')
+                time.sleep(2)
         else:
             print('Geen geldige invoer!')
     except:
