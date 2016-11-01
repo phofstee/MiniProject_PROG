@@ -4,8 +4,8 @@ __status__ = 'Development'
 
 # Programme modules
 from register import register
-from login import login
-
+#from login import login
+import login
 # Geeft menu opties weer
 def loginmenu():
 
