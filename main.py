@@ -40,6 +40,7 @@ def loginmenu():
                         success = False
                         useruuid = None
                         loginmenu()
+
         if input_choice == 2:
             # Pim
             register.register()

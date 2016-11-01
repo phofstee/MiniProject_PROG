@@ -1,36 +1,51 @@
-import sqlconnection
-#import menu
+#auteur: Gijs
 
-def login():
-    sqlconn, sqlcursor = sqlconnection.InitializeSQL()
-    stallingData = sqlconnection.GetAllRows(sqlcursor)
+from tkinter import *
+from tkinter.messagebox import showinfo
 
-    users = []
-    accounts = []
-    account_uuid = None
+#login venster wordt aangeroepen
+def toonVenster1():
+    def close():
+        subwindow.withdraw()
 
-    for row in stallingData:
-        users.append(row[1])
-        accounts.append([row[0], row[1], row[2]])
+    subwindow = Toplevel(master=root)
+    label = Label(master=subwindow, text='Vul hier uw login gegevens in', background='yellow', foreground='blue', font=('Times New Roman', 16, 'bold'), width=40, height=3)
+    label.pack()
 
-    print('Geef uw inloggegevens.')
-    print('')
+    entry1 = Entry(master=subwindow, background='white')
+    entry1.pack(pady=10, padx=10)
 
-    # Voer gebruikersnaam in en test of deze voorkomt
-    name = str.lower(input('Gebruikersnaam: '))
-    while name not in users:
-        print('Gebruiker komt niet voor in database. Probeer het nogmaals.')
-        name = str.lower(input('Gebruikersnaam: '))
+    entry2 = Entry(master=subwindow, background='white')
+    entry2.pack(pady=10, padx=10)
 
-    # Voer wachtwoord in en kijk of deze klopt met het account
-    for account in accounts:
-        if account[1] == name:
-            account_uuid = account[0]
-            account_password = account[2]
+#registreer venster wordt aangeroepen
+def toonVenster2():
+    def close():
+        subwindow.withdraw()
 
-    password = str(input('Wachtwoord:'))
-    while account_password != password:
-        print('Uw wachtwoord is onjuist. Probeer het nogmaals.')
-        password = str(input('Wachtwoord:'))
+    subwindow = Toplevel(master=root)
+    label = Label(master=subwindow, text='Vul hier uw gebruikersnaam en wachtwoord in', background='yellow', foreground='blue', font=('Times New Roman', 16, 'bold'), width=40, height=3)
+    label.pack()
 
-    return True, account_uuid
+    entry1 = Entry(master=subwindow, background='white')
+    entry1.pack(pady=10, padx=10)
+
+    entry2 = Entry(master=subwindow, background='white')
+    entry2.pack(pady=10, padx=10)
+
+
+root = Tk()
+
+#label
+label = Label(master=root, text='Welkom bij de NS-fietsenstalling', background='yellow', foreground='blue', font=('Times New Roman', 16, 'bold'), width=40, height=3)
+label.pack()
+
+#login button
+button1 = Button(master=root, text='Login', background='yellow', foreground='black', font=('Times New Roman', 11, 'bold'), command=toonVenster1)
+button1.pack(pady=10)
+
+#registreer button
+button2 = Button(master=root, text='Registreer', background='yellow', foreground='black', font=('Times New Roman', 11, 'bold'), command=toonVenster2)
+button2.pack(pady=10)
+
+root.mainloop()
