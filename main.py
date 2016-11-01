@@ -5,8 +5,9 @@ __status__ = 'Development'
 # Programma modules
 import register
 import login
+import information
 from menu import menu
-from park import park
+import park
 
 # Geeft menu opties weer
 def loginmenu():
@@ -29,9 +30,9 @@ def loginmenu():
 
                 for k,v in action.items():
                     if v == "park":
-                        park(useruuid)
+                        park.park(useruuid)
                     if v == "info":
-                        None
+                        information.menu(useruuid)
                         #tbi informatie over fiets/stalling
                     if v == "retrieve":
                         None
