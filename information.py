@@ -3,7 +3,6 @@ __version__ = 1.0
 __status__ = 'Development'
 
 import sqlconnection
-import os
 
 #menu voor persoonlijke data of algemene data
 def menu(useruuid):
@@ -45,7 +44,7 @@ def pers_info(useruuid):
     print('Gebruikers-ID: ' + str(userID))
     print('Fiets in stalling: ' + storagestate)
 
-    if storagedate != "":
+    if storagedate != '':
         print('Datum en tijd van stalling: ' + storagedate)
 
 #algemene data
