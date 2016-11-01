@@ -45,7 +45,7 @@ def pers_info(useruuid):
     print('Gebruikers-ID: ' + str(userID))
     print('Fiets in stalling: ' + storagestate)
 
-    if storagedate != '':
+    if storagedate != "":
         print('Datum en tijd van stalling: ' + storagedate)
 
 #algemene data

@@ -28,9 +28,9 @@ def login():
             account_uuid = account[0]
             account_password = account[2]
 
-    password = str(input('Wachtwoord:'))
+    password = str(input('Wachtwoord: '))
     while account_password != password:
         print('Uw wachtwoord is onjuist. Probeer het nogmaals.')
-        password = str(input('Wachtwoord:'))
+        password = str(input('Wachtwoord: '))
 
     return True, account_uuid
