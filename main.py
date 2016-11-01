@@ -2,8 +2,8 @@ __author__ = "Thomas Korevaar, Menno Noltes, Gijs van Ewijk, Larsse Vink and Pim
 __version__ = 1.0
 __status__ = 'Development'
 
-# Programme modules
-from register import register
+# Programma modules
+import register
 import login
 
 # Geeft menu opties weer
@@ -22,7 +22,7 @@ def loginmenu():
             login.login()
         if input_choice == 2:
             # Pim
-            register()
+            register.register()
         if input_choice == 3:
             # Menno
             print('Uitleg')
