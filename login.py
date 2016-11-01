@@ -1,5 +1,5 @@
 import sqlconnection
-import menu
+#import menu
 
 def login():
     sqlconn, sqlcursor = sqlconnection.InitializeSQL()
@@ -31,4 +31,4 @@ def login():
         print('Uw wachtwoord is onjuist. Probeer het nogmaals.')
         password = str(input('Wachtwoord:'))
 
-    menu.menu()
+    return True, account[0]

@@ -2,8 +2,6 @@ __author__ = "Thomas Korevaar, Menno Noltes, Gijs van Ewijk, Larsse Vink and Pim
 __version__ = 1.0
 __status__ = 'Development'
 
-from park import park
-
 def menu():
 
     print('Menu: ')
@@ -18,17 +16,22 @@ def menu():
         if input_choice > 0 and input_choice < 5:
             if input_choice == 1:
                 # Pim
-                park()
+                return {"action" : "park"}
             if input_choice == 2:
                 # Larsse
                 print('Fiets ophalen')
+                return {"action": "retrieve"}
             if input_choice == 3:
                 # Menno
                 print('Status fiets opvragen')
+                return {"action": "info"}
             if input_choice == 4:
                 print('Loguit')
+                return {"action": "logout"}
         else:
             print('Geen geldige invoer!')
+            return {"action": ""}
     except:
         print('')
         print('Ongeldige waarde!')
+        return {"action": ""}

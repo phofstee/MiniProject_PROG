@@ -3,7 +3,7 @@ __author__ = "Pim Hofstee"
 import sqlconnection
 import datetime
 
-def park():
+def park(uuid):
 
     # settings for SQL connection
     sqlconn, sqlcursor = sqlconnection.InitializeSQL()
@@ -14,8 +14,8 @@ def park():
     storagedate = today.strftime('%d-%m-%Y, %m:%m')
 
     dataobject = { "storagestate" : "1", "storagedate" : storagedate }
-    sqlconn, sqlcursor = sqlconnection.InitializeSQL()
-    sqlconnection.UpdateRow(sqlconnection, sqlcursor, dataobject, {"uuid" : account[0]})
+    #gebruik het sqlconn object als parameter, niet sqlconnection (het bestand)
+    sqlconnection.UpdateRow(sqlconn, sqlcursor, dataobject, {"uuid" : uuid})
 
     # update succesfully
     print('')
