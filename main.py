@@ -48,7 +48,8 @@ def loginmenu():
             register.register()
         if input_choice == 3:
             # Menno
-            print('Uitleg')
+            print('Kies optie 1 om in te loggen als u al een account heeft.')
+            print('Kies optie 2 om een nieuw account te maken.')
     else:
         print('Geen geldige invoer!')
 
