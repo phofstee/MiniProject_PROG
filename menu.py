@@ -4,28 +4,32 @@ __status__ = 'Development'
 
 from register import register
 from park import park
+import main
 
 def menu():
 
     print('Menu: ')
     print('1 - Fiets stallen')
-    print('3 - Fiets ophalen')
-    print('4 - Status fiets opvragen')
+    print('2 - Fiets ophalen')
+    print('3 - Status fiets opvragen')
+    print('4 - Uitloggen')
     print('')
 
     try:
         input_choice = int(input('Maak een keuze: '))
         if input_choice > 0 and input_choice < 5:
             if input_choice == 1:
-                # todo: extra beveiliging > registratie?
+                # Pim
                 park()
             if input_choice == 2:
-                # @todo: wachtwoord encrypten bij opslaan?
-                register()
-            if input_choice == 3:
+                # Larsse
                 print('Fiets ophalen')
-            if input_choice == 4:
+            if input_choice == 3:
+                # Menno
                 print('Status fiets opvragen')
+            if input_choice == 4:
+                # Menno
+                main.menu()
         else:
             print('Geen geldige invoer!')
     except:

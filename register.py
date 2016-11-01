@@ -2,7 +2,7 @@ __author__ = "Pim Hofstee"
 
 import sqlconnection
 import time
-import os
+from menu import menu
 
 def register():
 
@@ -49,3 +49,4 @@ def register():
     print('Het account', name, 'is succesvol aangemaakt')
     print('')
     time.sleep(2)
+    menu()
