@@ -75,4 +75,3 @@ def GetRow(sqlcursor, id):
 #     print(GetAllRows(sqlconnection))
 #
 #     sqlconnection.close()
-
