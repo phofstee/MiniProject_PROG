@@ -20,5 +20,3 @@ def park():
     # update succesfully
     print('')
     print('Login succesvol, u kunt uw fiets stallen.')
-
-park()

@@ -2,7 +2,6 @@ __author__ = "Thomas Korevaar, Menno Noltes, Gijs van Ewijk, Larsse Vink and Pim
 __version__ = 1.0
 __status__ = 'Development'
 
-from register import register
 from park import park
 import main
 
@@ -28,13 +27,9 @@ def menu():
                 # Menno
                 print('Status fiets opvragen')
             if input_choice == 4:
-                # Menno
-                main.menu()
+                main.loginmenu()
         else:
             print('Geen geldige invoer!')
     except:
         print('')
         print('Ongeldige waarde!')
-
-    # Na dat de functie is uitgevoerd, moet het menu opnieuw worden gestart.
-    menu()

@@ -2,14 +2,12 @@ __author__ = "Thomas Korevaar, Menno Noltes, Gijs van Ewijk, Larsse Vink and Pim
 __version__ = 1.0
 __status__ = 'Development'
 
-
 # Programme modules
 from register import register
 from login import login
 
-
 # Geeft menu opties weer
-def menu():
+def loginmenu():
 
     print('Menu: ')
     print('1 - Inloggen')
@@ -35,8 +33,5 @@ def menu():
         print('')
         print('Ongeldige waarde!')
 
-    # Na dat de functie is uitgevoerd, moet het menu opnieuw worden gestart.
-    menu()
-
 # Roep menu aan bij opstarten script
-menu()
+loginmenu()

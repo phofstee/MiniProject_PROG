@@ -1,4 +1,5 @@
 import sqlconnection
+import menu
 
 def login():
     sqlconn, sqlcursor = sqlconnection.InitializeSQL()
@@ -11,7 +12,7 @@ def login():
         users.append(row[1])
         accounts.append([row[0], row[1], row[2]])
 
-    print('Voordat u uw fiets kunt stallen, moet u eerst inloggen.')
+    print('Geef uw inloggegevens.')
     print('')
 
     # Enter username and check if username exists
@@ -29,3 +30,5 @@ def login():
     while account_password != password:
         print('Uw wachtwoord is onjuist. Probeer het nogmaals.')
         password = str(input('Wachtwoord:'))
+
+    menu.menu()
