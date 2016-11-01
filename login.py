@@ -15,13 +15,13 @@ def login():
     print('Geef uw inloggegevens.')
     print('')
 
-    # Enter username and check if username exists
+    # Voer gebruikersnaam in en test of deze voorkomt
     name = str.lower(input('Gebruikersnaam: '))
     while name not in users:
         print('Gebruiker komt niet voor in database. Probeer het nogmaals.')
         name = str.lower(input('Gebruikersnaam: '))
 
-    # Enter password and check if password does match
+    # Voer wachtwoord in en kijk of deze klopt met het account
     for account in accounts:
         if account[1] == name:
             account_password = account[2]

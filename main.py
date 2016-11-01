@@ -2,7 +2,7 @@ __author__ = "Thomas Korevaar, Menno Noltes, Gijs van Ewijk, Larsse Vink and Pim
 __version__ = 1.0
 __status__ = 'Development'
 
-# Programme modules
+# Programma modules
 import register
 import login
 from menu import menu
