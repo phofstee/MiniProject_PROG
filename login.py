@@ -1,5 +1,4 @@
 import sqlconnection
-#import menu
 
 def login():
     sqlconn, sqlcursor = sqlconnection.InitializeSQL()

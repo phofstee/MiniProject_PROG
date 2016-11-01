@@ -3,7 +3,6 @@ __version__ = 1.0
 __status__ = 'Development'
 
 import time
-from park import park
 
 def menu():
 
@@ -29,7 +28,6 @@ def menu():
                 print('Status fiets opvragen')
                 return {"action": "info"}
             if input_choice == 4:
-
                 print('Loguit')
                 return {"action": "logout"}
 
