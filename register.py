@@ -72,6 +72,10 @@ def AttemptRegister(username, password):
         if len(username) == 0:
             errormessage = 'U heeft geen gebruikersnaam ingevoerd\nProbeer het nogmaals.'
             usernameCleared = False
+        print(len(username) >= 1 and len(username) <= 24)
+        if len(username) > 24:
+            errormessage = 'De gebruikersnaam mag maximaal\n24 karakters lang zijn\nProbeer het nogmaals.'
+            usernameCleared = False
     except:
         errormessage = 'Ongeldige gebruikersnaam opgegeven\nprobeer nogmaals.'
         usernameCleared = False
@@ -86,6 +90,6 @@ def AttemptRegister(username, password):
         dataobject = { "username" : username, "password" : password, "storagestate" : "0", "storagedate" : "" }
         sqlconnection.CreateNewRow(sqlconn, sqlcursor, dataobject)
 
-        return True, 'Het account {} is succesvol aangemaakt'.format(username)
+        return True, 'Het account\n{}\nis succesvol aangemaakt'.format(username)
     else:
         return False, errormessage

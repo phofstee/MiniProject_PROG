@@ -63,15 +63,3 @@ def GetRow(sqlcursor, id):
         data = row
 
     return data
-
-# if __name__ == '__main__':
-#     dataobject = { "username" : "test", "password" : "123", "storagestate" : "0", "storagedate" : "" }
-#     sqlconnection, sqlcursor = InitializeSQL()
-#     CreateNewRow(sqlconnection, sqlcursor, dataobject)
-#     print(GetAllRows(sqlconnection))
-#
-#     dataobject = { "username" : "tset", "password" : "321", "storagestate" : "0", "storagedate" : "" }
-#     UpdateRow(sqlconnection, sqlcursor, dataobject, {"uuid" : "1"})
-#     print(GetAllRows(sqlconnection))
-#
-#     sqlconnection.close()

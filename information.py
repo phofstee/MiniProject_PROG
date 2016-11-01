@@ -24,10 +24,23 @@ def menu(useruuid):
         print('')
         print('Ongeldige waarde!')
 
+def ShowChoiceMenu(input, uuid):
+    if input == "pers_info":
+        #pers_info(uuid)
+        sqlconn, sqlcursor = sqlconnection.InitializeSQL()
+        return sqlconnection.GetRow(sqlcursor, {"uuid": uuid})
+    if input == "gen_info":
+        #gen_info()
+        sqlconn, sqlcursor = sqlconnection.InitializeSQL()
+        return len(sqlconnection.GetAllRows(sqlcursor))
+
+
 #persoonlijke data
 def pers_info(useruuid):
     sqlconn, sqlcursor = sqlconnection.InitializeSQL()
     parkingdata = sqlconnection.GetRow(sqlcursor, {"uuid" : useruuid})
+
+    data = {}
 
     userID = parkingdata[0]
     username = parkingdata[1]
@@ -46,6 +59,8 @@ def pers_info(useruuid):
 
     if storagedate != '':
         print('Datum en tijd van stalling: ' + storagedate)
+
+    return data
 
 #algemene data
 def gen_info():

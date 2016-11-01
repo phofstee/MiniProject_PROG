@@ -7,8 +7,8 @@ import register
 import login
 import retrieve
 import information
-from menu import menu
 import park
+from menu import menu
 
 # Geeft menu opties weer
 def loginmenu():

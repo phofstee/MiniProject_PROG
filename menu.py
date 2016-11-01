@@ -41,3 +41,19 @@ def menu():
         print('')
         print('Ongeldige waarde!')
         return {"action": ""}
+
+def ParseChoice(input):
+    if input == 1:
+        # Pim
+        return {"action" : "park"}
+    if input == 2:
+        # Larsse
+        print('Fiets ophalen')
+        return {"action": "retrieve"}
+    if input == 3:
+        # Menno
+        print('Status fiets opvragen')
+        return {"action": "info"}
+    if input == 4:
+        print('Loguit')
+        return {"action": "logout"}
