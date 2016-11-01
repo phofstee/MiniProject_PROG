@@ -5,6 +5,7 @@ __status__ = 'Development'
 # Programma modules
 import register
 import login
+import retrieve
 import information
 from menu import menu
 import park
@@ -19,7 +20,7 @@ def loginmenu():
     print('')
 
     input_choice = int(input('Maak een keuze: '))
-    if input_choice > 0 and input_choice < 3:
+    if input_choice > 0 and input_choice < 4:
         if input_choice == 1:
             # Pim, Thomas
             success, useruuid = login.login()
@@ -31,12 +32,12 @@ def loginmenu():
                 for k,v in action.items():
                     if v == "park":
                         park.park(useruuid)
+                    if v == "retrieve":
+                        retrieve.retrieve(useruuid)
+                        #tbi fiets ophalen
                     if v == "info":
                         information.menu(useruuid)
                         #tbi informatie over fiets/stalling
-                    if v == "retrieve":
-                        None
-                        #tbi fiets ophalen
                     if v == "logout":
                         success = False
                         useruuid = None
