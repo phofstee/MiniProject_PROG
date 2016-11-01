@@ -5,7 +5,6 @@
 #   pip install qrcode
 #   pip install pillow
 
-import time
 import pyotp
 import qrcode
 from PIL import Image
