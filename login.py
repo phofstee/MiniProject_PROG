@@ -7,6 +7,7 @@ def login():
 
     users = []
     accounts = []
+    account_uuid = None
 
     for row in stallingData:
         users.append(row[1])
@@ -24,6 +25,7 @@ def login():
     # Voer wachtwoord in en kijk of deze klopt met het account
     for account in accounts:
         if account[1] == name:
+            account_uuid = account[0]
             account_password = account[2]
 
     password = str(input('Wachtwoord:'))
@@ -31,4 +33,4 @@ def login():
         print('Uw wachtwoord is onjuist. Probeer het nogmaals.')
         password = str(input('Wachtwoord:'))
 
-    return True, account[0]
+    return True, account_uuid
