@@ -6,7 +6,7 @@ Compabiliteit: Windows 7 en later.
 1. Pak het ZIP bestand uit op je computer.
 2. Start PyCharm op en importeer het project
 3. Installeer de Python Packages (modules): pyotp, qrcode en pillow
-3. Start het bestand tkinder_main.py
+3. Start het bestand tkinter_main.py
 
 Vanaf hier wordt de grafische interface gestart, en kunt u kiezen om zich te registreren of in te loggen.
 
