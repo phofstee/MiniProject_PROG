@@ -31,8 +31,8 @@ def PopupWindow(windowtext):
     label = tkinter.Label(master=subwindow, text=windowtext, background='blue', foreground='white', font=('Calibri', 16, 'bold'), width=40, height=3)
     label.pack()
 
-    button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
-    button1.pack(pady=10)
+    closeButton = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
+    closeButton.pack(pady=10)
 
 # Venster na het registreren waar de QR code voor de google authenticator getoond wordt
 __author__ = "Thomas"
@@ -54,8 +54,8 @@ def AfterRegisterWindow(windowtext):
     qrcodeImageLabel.photo = qrcodeImage
     qrcodeImageLabel.pack()
 
-    button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
-    button1.pack(pady=10)
+    closeButton = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
+    closeButton.pack(pady=10)
 
     CenterWindow(subwindow, 450, 700)
 
@@ -65,7 +65,7 @@ def LoginScreen():
     def close():
         subwindow.destroy()
 
-    def onEnter(event):
+    def onSubmit():
         username = entry1.get()
         password = entry2.get()
 
@@ -94,14 +94,17 @@ def LoginScreen():
 
     entry1 = tkinter.Entry(master=subwindow, background='white')
     entry1.pack(pady=10, padx=10)
-    entry1.bind('<Return>', onEnter)
+    #entry1.bind('<Return>', onSubmit)
 
     entry2 = tkinter.Entry(master=subwindow, background='white')
     entry2.pack(pady=10, padx=10)
-    entry2.bind('<Return>', onEnter)
+    #entry2.bind('<Return>', onSubmit)
 
-    button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
-    button1.pack(pady=10)
+    submitButton = tkinter.Button(master=subwindow, text='Verder', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=onSubmit)
+    submitButton.pack(pady=10)
+
+    closeButton = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
+    closeButton.pack(pady=10)
 
 #Venster waar de gebruiker de authenticatiecode uit de google authenticator app invoerd
 __author__ = "Thomas"
@@ -113,7 +116,7 @@ def AuthCodeWindow():
         mainmenu.deiconify()
         subwindow.destroy()
 
-    def onEnter(event):
+    def onSubmit():
         authcode = entry1.get()
 
         if twostep.Authorize(authcode, uuid):
@@ -133,10 +136,13 @@ def AuthCodeWindow():
 
     entry1 = tkinter.Entry(master=subwindow, background='white')
     entry1.pack(pady=10, padx=10)
-    entry1.bind('<Return>', onEnter)
+    #entry1.bind('<Return>', onSubmit)
 
-    button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
-    button1.pack(pady=10)
+    submitButton = tkinter.Button(master=subwindow, text='Verder', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=onSubmit)
+    submitButton.pack(pady=10)
+
+    closeButton = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
+    closeButton.pack(pady=10)
 
 #registreer venster wordt aangeroepen
 __author__ = "Gijs, Thomas"
@@ -144,7 +150,7 @@ def RegisterScreen():
     def close():
         subwindow.destroy()
 
-    def onEnter(event):
+    def onSubmit():
         username = entry1.get()
         password = entry2.get()
 
@@ -175,14 +181,17 @@ def RegisterScreen():
 
     entry1 = tkinter.Entry(master=subwindow, background='white')
     entry1.pack(pady=10, padx=10)
-    entry1.bind('<Return>', onEnter)
+    #entry1.bind('<Return>', onSubmit)
 
     entry2 = tkinter.Entry(master=subwindow, background='white')
     entry2.pack(pady=10, padx=10)
-    entry2.bind('<Return>', onEnter)
+    #entry2.bind('<Return>', onSubmit)
 
-    button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
-    button1.pack(pady=10)
+    submitButton = tkinter.Button(master=subwindow, text='Verder', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=onSubmit)
+    submitButton.pack(pady=10)
+
+    closeButton = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
+    closeButton.pack(pady=10)
 
 #Keuze venster voor meerkeuzeopties zoals bij het informatiescherm
 __author__ = "Thomas"
@@ -200,8 +209,8 @@ def ChoiceWindow(windowtext, choices):
 
     for k,v in choices.items():
         argsButton = {k:k}
-        button1 = tkinter.Button(master=choicewindow, text=v, background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=lambda arg=argsButton: RunAction(arg))
-        button1.pack(pady=10)
+        button = tkinter.Button(master=choicewindow, text=v, background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=lambda arg=argsButton: RunAction(arg))
+        button.pack(pady=10)
 
 #Venster met alleen tekst en een sluitknop, voor multi-line meldingen
 __author__ = "Thomas"
@@ -221,8 +230,8 @@ def LabelWindow(windowtext, labels):
         label1 = tkinter.Label(master=subwindow, text=v, background='yellow', foreground='black', font=('Calibri', 11, 'bold'))
         label1.pack(pady=10)
 
-    button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
-    button1.pack(pady=10)
+    closeButton = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
+    closeButton.pack(pady=10)
 
 #Functie die de acties delegeerd vanuit de knoppen op het main-menu scherm
 __author__ = "Thomas, Larsse, Pim, Menno"
@@ -310,12 +319,12 @@ if __name__ == "__main__":
     label.pack()
 
     #login button
-    button1 = tkinter.Button(master=root, text='Login', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=LoginScreen)
-    button1.pack(pady=10)
+    loginButton = tkinter.Button(master=root, text='Login', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=LoginScreen)
+    loginButton.pack(pady=10)
 
     #registreer button
-    button2 = tkinter.Button(master=root, text='Registreer', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=RegisterScreen)
-    button2.pack(pady=10)
+    registerButton = tkinter.Button(master=root, text='Registreer', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=RegisterScreen)
+    registerButton.pack(pady=10)
 
     CenterWindow(root)
 
