@@ -57,8 +57,8 @@ def AfterRegisterWindow(windowtext):
     CenterWindow(subwindow, 450, 700)
 
 #login venster wordt aangeroepen
+# auteur: Gijs, Thomas
 def LoginScreen():
-    # auteur: Gijs, Thomas
     def close():
         subwindow.destroy()
 
@@ -100,8 +100,8 @@ def LoginScreen():
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
+# auteur: Thomas
 def AuthCodeWindow():
-    # auteur: Thomas
     global uuid
     global mainmenu
 
@@ -135,8 +135,8 @@ def AuthCodeWindow():
     button1.pack(pady=10)
 
 #registreer venster wordt aangeroepen
+# auteur: Gijs, Thomas
 def RegisterScreen():
-    # auteur: Gijs, Thomas
     def close():
         subwindow.destroy()
 
@@ -180,8 +180,8 @@ def RegisterScreen():
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
+# auteur: Thomas
 def ChoiceWindow(windowtext, choices):
-    # auteur: Thomas
     global choicewindow
     def close():
         choicewindow.destroy()
@@ -198,8 +198,8 @@ def ChoiceWindow(windowtext, choices):
         button1 = tkinter.Button(master=choicewindow, text=v, background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=lambda arg=argsButton: RunAction(arg))
         button1.pack(pady=10)
 
+# auteur: Thomas
 def LabelWindow(windowtext, labels):
-    # auteur: Thomas
     def close():
         global mainmenu
         mainmenu.deiconify()
@@ -218,8 +218,8 @@ def LabelWindow(windowtext, labels):
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
+# auteur: Thomas
 def RunAction(args):
-    # auteur: Thomas
     global uuid
     global mainmenu
 
@@ -253,8 +253,8 @@ def RunAction(args):
                 "storagedate" : "Datum en tijd van stalling: {}".format(result[5] if result[5] != "" else 'Geen fiets gestald')
             })
 
+# auteur: Gijs, Thomas
 def ShowMainMenu(username):
-    # auteur: Gijs, Thomas
     global mainmenu
     mainmenu = tkinter.Tk()
     mainmenu.configure(background='yellow')

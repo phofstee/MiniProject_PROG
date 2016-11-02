@@ -24,17 +24,6 @@ def menu(useruuid):
         print('')
         print('Ongeldige waarde!')
 
-def ShowChoiceMenu(input, uuid):
-    if input == "pers_info":
-        #pers_info(uuid)
-        sqlconn, sqlcursor = sqlconnection.InitializeSQL()
-        return sqlconnection.GetRow(sqlcursor, {"uuid": uuid})
-    if input == "gen_info":
-        #gen_info()
-        sqlconn, sqlcursor = sqlconnection.InitializeSQL()
-        return len(sqlconnection.GetAllRows(sqlcursor))
-
-
 #persoonlijke data
 def pers_info(useruuid):
     sqlconn, sqlcursor = sqlconnection.InitializeSQL()
@@ -77,3 +66,12 @@ def gen_info():
     print('Algemene informatie: ')
     print('Er zijn in totaal ' + str(userIDs_amount) + ' gebruikers.')
 
+def ShowChoiceMenu(input, uuid):
+    if input == "pers_info":
+        #pers_info(uuid)
+        sqlconn, sqlcursor = sqlconnection.InitializeSQL()
+        return sqlconnection.GetRow(sqlcursor, {"uuid": uuid})
+    if input == "gen_info":
+        #gen_info()
+        sqlconn, sqlcursor = sqlconnection.InitializeSQL()
+        return len(sqlconnection.GetAllRows(sqlcursor))

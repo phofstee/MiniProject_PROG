@@ -1,4 +1,4 @@
-__author__ = "Pim Hofstee"
+__author__ = "Pim Hofstee", "Thomas Korevaar"
 
 import sqlconnection
 import time
@@ -73,7 +73,6 @@ def AttemptRegister(username, password):
         if len(username) == 0:
             errormessage = 'U heeft geen gebruikersnaam ingevoerd\nProbeer het nogmaals.'
             usernameCleared = False
-        print(len(username) >= 1 and len(username) <= 24)
         if len(username) > 24:
             errormessage = 'De gebruikersnaam mag maximaal\n24 karakters lang zijn\nProbeer het nogmaals.'
             usernameCleared = False
