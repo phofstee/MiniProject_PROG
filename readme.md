@@ -7,6 +7,7 @@ Compabiliteit: Windows 7 en later.
 2. Start PyCharm op en importeer het project
 3. Installeer de Python Packages (modules): pyotp, qrcode en pillow
 3. Start het bestand tkinter_main.py
+4. (optioneel) Download de Google Authenticator app uit de Google Play Store of App store op uw mobiele telefoon, voor het ophalen van uw fiets.
 
 Vanaf hier wordt de grafische interface gestart, en kunt u kiezen om zich te registreren of in te loggen.
 
