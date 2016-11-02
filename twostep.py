@@ -7,7 +7,7 @@
 
 import pyotp
 import qrcode
-from PIL import Image
+import sqlconnection
 
 def GetSecret():
     return pyotp.random_base32()
@@ -23,5 +23,11 @@ def CreateAuthenticatorQRCode(secret, username):
 
     img = qrcode.make(totp.provisioning_uri("Fietsenstalling: {}".format(username)))
     img.save('qrcode.png')
-    img = Image.open('qrcode.png')
-    img.show()
+
+def Authorize(authcode, uuid):
+    sqlconn, sqlcursor = sqlconnection.InitializeSQL()
+
+    if authcode == GetTOTP(sqlconnection.GetRow(sqlcursor, {"uuid" : uuid})[3]):
+        return True
+    else:
+        return False

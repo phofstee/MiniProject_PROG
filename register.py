@@ -2,6 +2,7 @@ __author__ = "Pim Hofstee"
 
 import sqlconnection
 import time
+import twostep
 
 def register():
 
@@ -87,7 +88,7 @@ def AttemptRegister(username, password):
 
     if usernameCleared and passwordCleared:
         # Fill object and store
-        dataobject = { "username" : username, "password" : password, "storagestate" : "0", "storagedate" : "" }
+        dataobject = { "username" : username, "password" : password, "secret" : twostep.GetSecret(), "storagestate" : "0", "storagedate" : "" }
         sqlconnection.CreateNewRow(sqlconn, sqlcursor, dataobject)
 
         return True, 'Het account\n{}\nis succesvol aangemaakt'.format(username)
