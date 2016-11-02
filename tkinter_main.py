@@ -1,4 +1,4 @@
-__author__ = "Gijs, Thomas"
+__author__ = "Thomas, Gijs, Larsse, Menno, Pim"
 
 import tkinter
 import login
@@ -218,7 +218,7 @@ def LabelWindow(windowtext, labels):
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
-__author__ = "Thomas"
+__author__ = "Thomas, Larsse, Pim, Menno"
 def RunAction(args):
     global uuid
     global mainmenu
@@ -253,7 +253,7 @@ def RunAction(args):
                 "storagedate" : "Datum en tijd van stalling: {}".format(result[5] if result[5] != "" else 'Geen fiets gestald')
             })
 
-__author__ = "Gijs, Thomas"
+__author__ = "Gijs, Thomas, Pim, Menno, Larsse"
 def ShowMainMenu(username):
     global mainmenu
     mainmenu = tkinter.Tk()

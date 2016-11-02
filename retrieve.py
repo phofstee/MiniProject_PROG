@@ -1,4 +1,4 @@
-__author__ = "Larsse Vink"
+__author__ = "Larsse"
 
 import sqlconnection
 import twostep

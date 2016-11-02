@@ -1,4 +1,5 @@
 __author__ = "Thomas"
+
 import sqlite3
 
 def InitializeSQL():

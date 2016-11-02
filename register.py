@@ -1,4 +1,4 @@
-__author__ = "Pim Hofstee", "Thomas Korevaar"
+__author__ = "Pim en Thomas"
 
 import sqlconnection
 import twostep

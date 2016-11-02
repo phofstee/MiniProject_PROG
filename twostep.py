@@ -1,4 +1,4 @@
-__author__ = "Thomas Korevaar"
+__author__ = "Thomas"
 
 import pyotp
 import qrcode

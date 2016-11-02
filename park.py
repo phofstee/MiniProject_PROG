@@ -1,4 +1,4 @@
-__author__ = "Pim Hofstee"
+__author__ = "Pim"
 
 import sqlconnection
 import datetime
