@@ -1,4 +1,4 @@
-#auteur: Gijs, Thomas
+__author__ = "Gijs, Thomas"
 
 import tkinter
 import login
@@ -9,13 +9,13 @@ import information
 import park
 import twostep
 
-#auteur: Thomas
+__author__ = "Thomas"
 def CenterWindow(rootobj, width=450, height=450):
     screen_width = (rootobj.winfo_screenwidth() / 2)
     screen_height = (rootobj.winfo_screenheight() / 2)
     rootobj.geometry("%dx%d+%d+%d" % (width, height, (screen_width - (width / 2)), (screen_height - ((height / 2)))))
 
-#auteur: Thomas
+__author__ = "Thomas"
 def PopupWindow(windowtext):
     def close():
         global mainmenu
@@ -32,7 +32,7 @@ def PopupWindow(windowtext):
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
-#auteur: Thomas
+__author__ = "Thomas"
 def AfterRegisterWindow(windowtext):
     def close():
         global mainmenu
@@ -57,7 +57,7 @@ def AfterRegisterWindow(windowtext):
     CenterWindow(subwindow, 450, 700)
 
 #login venster wordt aangeroepen
-# auteur: Gijs, Thomas
+__author__ = "Gijs, Thomas"
 def LoginScreen():
     def close():
         subwindow.destroy()
@@ -100,7 +100,7 @@ def LoginScreen():
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
-# auteur: Thomas
+__author__ = "Thomas"
 def AuthCodeWindow():
     global uuid
     global mainmenu
@@ -135,7 +135,7 @@ def AuthCodeWindow():
     button1.pack(pady=10)
 
 #registreer venster wordt aangeroepen
-# auteur: Gijs, Thomas
+__author__ = "Gijs, Thomas"
 def RegisterScreen():
     def close():
         subwindow.destroy()
@@ -180,7 +180,7 @@ def RegisterScreen():
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
-# auteur: Thomas
+__author__ = "Thomas"
 def ChoiceWindow(windowtext, choices):
     global choicewindow
     def close():
@@ -198,7 +198,7 @@ def ChoiceWindow(windowtext, choices):
         button1 = tkinter.Button(master=choicewindow, text=v, background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=lambda arg=argsButton: RunAction(arg))
         button1.pack(pady=10)
 
-# auteur: Thomas
+__author__ = "Thomas"
 def LabelWindow(windowtext, labels):
     def close():
         global mainmenu
@@ -218,7 +218,7 @@ def LabelWindow(windowtext, labels):
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
-# auteur: Thomas
+__author__ = "Thomas"
 def RunAction(args):
     global uuid
     global mainmenu
@@ -253,7 +253,7 @@ def RunAction(args):
                 "storagedate" : "Datum en tijd van stalling: {}".format(result[5] if result[5] != "" else 'Geen fiets gestald')
             })
 
-# auteur: Gijs, Thomas
+__author__ = "Gijs, Thomas"
 def ShowMainMenu(username):
     global mainmenu
     mainmenu = tkinter.Tk()

@@ -1,6 +1,4 @@
-__author__ = "Menno Noltes"
-__version__ = 1.0
-__status__ = 'Development'
+__author__ = "Menno"
 
 import sqlconnection
 

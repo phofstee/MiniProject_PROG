@@ -1,4 +1,4 @@
-# Auteur: Thomas Korevaar
+__author__ = "Thomas"
 import sqlite3
 
 def InitializeSQL():

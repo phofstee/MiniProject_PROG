@@ -1,9 +1,4 @@
-#Auteur: Thomas Korevaar
-
-#Gebruikte modules:
-#   pip install pyotp
-#   pip install qrcode
-#   pip install pillow
+__author__ = "Thomas Korevaar"
 
 import pyotp
 import qrcode

@@ -1,4 +1,4 @@
-#auteur = Larsse Vink
+__author__ = "Larsse Vink"
 
 import sqlconnection
 import twostep

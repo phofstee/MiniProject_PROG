@@ -1,6 +1,7 @@
+__author__ = "Pim"
+
 import sqlconnection
 
-#Auteur: Pim Hofstee
 def AttemptLogin(username, password):
     sqlconn, sqlcursor = sqlconnection.InitializeSQL()
     stallingData = sqlconnection.GetAllRows(sqlcursor)
