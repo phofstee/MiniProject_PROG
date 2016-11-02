@@ -16,7 +16,7 @@ def CenterWindow(rootobj, width=450, height=450):
     screen_height = (rootobj.winfo_screenheight() / 2)
     rootobj.geometry("%dx%d+%d+%d" % (width, height, (screen_width - (width / 2)), (screen_height - ((height / 2)))))
 
-###
+# Popup Venster voor meldingen door het programma
 __author__ = "Thomas"
 def PopupWindow(windowtext):
     def close():
@@ -34,7 +34,7 @@ def PopupWindow(windowtext):
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
-###
+# Venster na het registreren waar de QR code voor de google authenticator getoond wordt
 __author__ = "Thomas"
 def AfterRegisterWindow(windowtext):
     def close():
@@ -103,6 +103,7 @@ def LoginScreen():
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
+#Venster waar de gebruiker de authenticatiecode uit de google authenticator app invoerd
 __author__ = "Thomas"
 def AuthCodeWindow():
     global uuid
@@ -183,6 +184,7 @@ def RegisterScreen():
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
+#Keuze venster voor meerkeuzeopties zoals bij het informatiescherm
 __author__ = "Thomas"
 def ChoiceWindow(windowtext, choices):
     global choicewindow
@@ -201,6 +203,7 @@ def ChoiceWindow(windowtext, choices):
         button1 = tkinter.Button(master=choicewindow, text=v, background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=lambda arg=argsButton: RunAction(arg))
         button1.pack(pady=10)
 
+#Venster met alleen tekst en een sluitknop, voor multi-line meldingen
 __author__ = "Thomas"
 def LabelWindow(windowtext, labels):
     def close():
@@ -221,6 +224,7 @@ def LabelWindow(windowtext, labels):
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
+#Functie die de acties delegeerd vanuit de knoppen op het main-menu scherm
 __author__ = "Thomas, Larsse, Pim, Menno"
 def RunAction(args):
     global uuid
@@ -290,10 +294,12 @@ def ShowMainMenu(username):
 
     mainmenu.mainloop()
 
+#globals
 uuid = None
 mainmenu = None
 choicewindow = None
 
+#Root inlogscherm en main
 __author__ = "Gijs"
 if __name__ == "__main__":
     root = tkinter.Tk()
