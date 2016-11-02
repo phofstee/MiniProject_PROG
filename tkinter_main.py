@@ -94,11 +94,9 @@ def LoginScreen():
 
     entry1 = tkinter.Entry(master=subwindow, background='white')
     entry1.pack(pady=10, padx=10)
-    #entry1.bind('<Return>', onSubmit)
 
     entry2 = tkinter.Entry(master=subwindow, background='white')
     entry2.pack(pady=10, padx=10)
-    #entry2.bind('<Return>', onSubmit)
 
     submitButton = tkinter.Button(master=subwindow, text='Verder', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=onSubmit)
     submitButton.pack(pady=10)
@@ -136,7 +134,6 @@ def AuthCodeWindow():
 
     entry1 = tkinter.Entry(master=subwindow, background='white')
     entry1.pack(pady=10, padx=10)
-    #entry1.bind('<Return>', onSubmit)
 
     submitButton = tkinter.Button(master=subwindow, text='Verder', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=onSubmit)
     submitButton.pack(pady=10)
@@ -181,11 +178,9 @@ def RegisterScreen():
 
     entry1 = tkinter.Entry(master=subwindow, background='white')
     entry1.pack(pady=10, padx=10)
-    #entry1.bind('<Return>', onSubmit)
 
     entry2 = tkinter.Entry(master=subwindow, background='white')
     entry2.pack(pady=10, padx=10)
-    #entry2.bind('<Return>', onSubmit)
 
     submitButton = tkinter.Button(master=subwindow, text='Verder', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=onSubmit)
     submitButton.pack(pady=10)
