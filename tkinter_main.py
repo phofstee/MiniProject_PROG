@@ -9,12 +9,14 @@ import information
 import park
 import twostep
 
+# Functie om het scherm in het midden te weergeven bij opstarten
 __author__ = "Thomas"
 def CenterWindow(rootobj, width=450, height=450):
     screen_width = (rootobj.winfo_screenwidth() / 2)
     screen_height = (rootobj.winfo_screenheight() / 2)
     rootobj.geometry("%dx%d+%d+%d" % (width, height, (screen_width - (width / 2)), (screen_height - ((height / 2)))))
 
+###
 __author__ = "Thomas"
 def PopupWindow(windowtext):
     def close():
@@ -32,6 +34,7 @@ def PopupWindow(windowtext):
     button1 = tkinter.Button(master=subwindow, text='Sluiten', background='blue', foreground='white', font=('Calibri', 11, 'bold'), command=close)
     button1.pack(pady=10)
 
+###
 __author__ = "Thomas"
 def AfterRegisterWindow(windowtext):
     def close():
@@ -253,6 +256,7 @@ def RunAction(args):
                 "storagedate" : "Datum en tijd van stalling: {}".format(result[5] if result[5] != "" else 'Geen fiets gestald')
             })
 
+# Functie om het keuze menu op te bouwen
 __author__ = "Gijs, Thomas, Pim, Menno, Larsse"
 def ShowMainMenu(username):
     global mainmenu
@@ -290,6 +294,7 @@ uuid = None
 mainmenu = None
 choicewindow = None
 
+__author__ = "Gijs"
 if __name__ == "__main__":
     root = tkinter.Tk()
     root.configure(background='yellow')

@@ -2,6 +2,7 @@ __author__ = "Thomas"
 
 import sqlite3
 
+# naam van de database, en de structuur van de database
 def InitializeSQL():
     sqlconnection = sqlite3.connect('stalling.db')
     sqlcursor = sqlconnection.cursor()
@@ -9,9 +10,7 @@ def InitializeSQL():
 
     return sqlconnection, sqlcursor
 
-def CloseSQL(sqlconnection):
-    sqlconnection.close()
-
+# Functie om nieuwe data in de database te zetten
 def CreateNewRow(sqlconnection, sqlcursor, data):
     keystring = ""
     datastring = ""
@@ -26,6 +25,7 @@ def CreateNewRow(sqlconnection, sqlcursor, data):
     sqlcursor.execute("INSERT INTO stalling ({}) VALUES ({})".format(keystring, datastring))
     sqlconnection.commit()
 
+# Functie om een regel in de database aan te passen
 def UpdateRow(sqlconnection, sqlcursor, data, id):
     updatestring = ""
     key = ""
@@ -43,6 +43,7 @@ def UpdateRow(sqlconnection, sqlcursor, data, id):
     sqlcursor.execute("UPDATE stalling SET {} WHERE {} = '{}'".format(updatestring, key, value))
     sqlconnection.commit()
 
+# Functie om alle data in een keer alles uit de database te krijgen
 def GetAllRows(sqlcursor):
     allrows = []
 
@@ -51,6 +52,7 @@ def GetAllRows(sqlcursor):
 
     return allrows
 
+# Functie om een regel uit de database te krijgen
 def GetRow(sqlcursor, id):
     data = None
     key = ""

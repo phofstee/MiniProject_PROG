@@ -4,11 +4,11 @@ import sqlconnection
 import twostep
 
 def AttemptRegister(username, password):
-    # settings for SQL connection
+
     sqlconn, sqlcursor = sqlconnection.InitializeSQL()
     stallingData = sqlconnection.GetAllRows(sqlcursor)
 
-    # create a list of all users
+    # Maak een list van alle gebruikers
     users = []
     errormessage = None
 
@@ -18,7 +18,7 @@ def AttemptRegister(username, password):
     for row in stallingData:
         users.append(row[1])
 
-    # create username
+    # Maak een username
     try:
         if username in users:
             errormessage = 'Deze gebruikersnaam is al in gebruik\nkies a.u.b. een nieuwe.'
@@ -33,13 +33,14 @@ def AttemptRegister(username, password):
         errormessage = 'Ongeldige gebruikersnaam opgegeven\nprobeer nogmaals.'
         usernameCleared = False
 
-    #create password
+    # Maak een wachtwoord
     if len(password) <= 0:
         errormessage = 'Ongeldig wachtwoord opgegeven\nprobeer het nogmaals.'
         passwordCleared = False
 
+    # Als username en wachtwoord zijn aangemaakt, data opslaan
     if usernameCleared and passwordCleared:
-        # Fill object and store
+
         dataobject = { "username" : username, "password" : password, "secret" : twostep.GetSecret(), "storagestate" : "0", "storagedate" : "" }
         sqlconnection.CreateNewRow(sqlconn, sqlcursor, dataobject)
 

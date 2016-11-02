@@ -8,9 +8,9 @@ def ParkBike(uuid):
 
     today = datetime.datetime.now()
     storagedate = today.strftime('%d-%m-%Y, %H:%M')
-
     userInfo = sqlconnection.GetRow(sqlcursor, {"uuid" : uuid})
-    # Controleer of de fiets al gestald is of niet
+
+    # Controleer of de fiets al gestald is of niet, en sla de nieuwe data op
     if userInfo[4] != 1:
         dataobject = { "storagestate" : "1", "storagedate" : storagedate }
         sqlconnection.UpdateRow(sqlconn, sqlcursor, dataobject, {"uuid" : uuid})
